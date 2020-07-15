@@ -30,20 +30,19 @@ Partial Class LoginFormSA
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LoginFormSA))
-        Me.LogoPictureBox = New System.Windows.Forms.PictureBox
-        Me.UsernameLabel = New System.Windows.Forms.Label
-        Me.PasswordLabel = New System.Windows.Forms.Label
-        Me.UsernameTextBox = New System.Windows.Forms.TextBox
-        Me.PasswordTextBox = New System.Windows.Forms.TextBox
-        Me.OK = New System.Windows.Forms.Button
-        Me.Cancel = New System.Windows.Forms.Button
+        Me.LogoPictureBox = New System.Windows.Forms.PictureBox()
+        Me.UsernameLabel = New System.Windows.Forms.Label()
+        Me.PasswordLabel = New System.Windows.Forms.Label()
+        Me.UsernameTextBox = New System.Windows.Forms.TextBox()
+        Me.PasswordTextBox = New System.Windows.Forms.TextBox()
+        Me.OK = New System.Windows.Forms.Button()
+        Me.Cancel = New System.Windows.Forms.Button()
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LogoPictureBox
         '
-        Me.LogoPictureBox.Image = CType(resources.GetObject("LogoPictureBox.Image"), System.Drawing.Image)
+        Me.LogoPictureBox.Image = Global.Almacen.My.Resources.Resources.imglogin
         Me.LogoPictureBox.Location = New System.Drawing.Point(0, 0)
         Me.LogoPictureBox.Name = "LogoPictureBox"
         Me.LogoPictureBox.Size = New System.Drawing.Size(165, 193)

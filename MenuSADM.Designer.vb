@@ -22,9 +22,9 @@ Partial Class MenuSADM
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.BtnSalir = New System.Windows.Forms.Button
-        Me.BtnAutoriza = New System.Windows.Forms.Button
-        Me.Button1 = New System.Windows.Forms.Button
+        Me.BtnSalir = New System.Windows.Forms.Button()
+        Me.BtnAutoriza = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'BtnSalir
@@ -70,7 +70,7 @@ Partial Class MenuSADM
         Me.Controls.Add(Me.BtnAutoriza)
         Me.Controls.Add(Me.Button1)
         Me.Name = "MenuSADM"
-        Me.Text = "MenuSADM"
+        Me.Text = " "
         Me.ResumeLayout(False)
 
     End Sub

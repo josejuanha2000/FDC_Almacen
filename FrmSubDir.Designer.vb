@@ -22,29 +22,29 @@ Partial Class FrmSubDir
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox
-        Me.BtnMostrar = New System.Windows.Forms.Button
-        Me.CBFolio = New System.Windows.Forms.ComboBox
-        Me.Label4 = New System.Windows.Forms.Label
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker
-        Me.Label3 = New System.Windows.Forms.Label
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox
-        Me.TBTitular = New System.Windows.Forms.TextBox
-        Me.Label2 = New System.Windows.Forms.Label
-        Me.TBDepto = New System.Windows.Forms.TextBox
-        Me.Label5 = New System.Windows.Forms.Label
-        Me.SqlConnection1 = New System.Data.SqlClient.SqlConnection
-        Me.BtnRechazar = New System.Windows.Forms.Button
-        Me.BtnAutoriza = New System.Windows.Forms.Button
-        Me.ListView1 = New System.Windows.Forms.ListView
-        Me.FOLIO = New System.Windows.Forms.ColumnHeader
-        Me.NOMBRE_ART = New System.Windows.Forms.ColumnHeader
-        Me.FECHA_CAPTURA = New System.Windows.Forms.ColumnHeader
-        Me.CAN_ART = New System.Windows.Forms.ColumnHeader
-        Me.JUSTIFICACION = New System.Windows.Forms.ColumnHeader
-        Me.TITULAR = New System.Windows.Forms.ColumnHeader
-        Me.SUBDIR = New System.Windows.Forms.ColumnHeader
-        Me.ACT = New System.Windows.Forms.ColumnHeader
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.BtnMostrar = New System.Windows.Forms.Button()
+        Me.CBFolio = New System.Windows.Forms.ComboBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.TBTitular = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TBDepto = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.SqlConnection1 = New System.Data.SqlClient.SqlConnection()
+        Me.BtnRechazar = New System.Windows.Forms.Button()
+        Me.BtnAutoriza = New System.Windows.Forms.Button()
+        Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.FOLIO = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.NOMBRE_ART = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.FECHA_CAPTURA = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.CAN_ART = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.JUSTIFICACION = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.TITULAR = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.SUBDIR = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ACT = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -87,7 +87,7 @@ Partial Class FrmSubDir
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(55, 71)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(61, 16)
+        Me.Label4.Size = New System.Drawing.Size(55, 16)
         Me.Label4.TabIndex = 2
         Me.Label4.Text = "FOLIO:"
         '
@@ -160,8 +160,8 @@ Partial Class FrmSubDir
         '
         'SqlConnection1
         '
-        Me.SqlConnection1.ConnectionString = "Data Source=COLMASQLFDC01\FACDYCDES;Initial Catalog=ALMACEN;Integrated Security=T" & _
-            "rue"
+        Me.SqlConnection1.ConnectionString = "Data Source=148.234.110.22;Initial Catalog=ALMACEN;User ID=sa;Password=Facdyc2020" &
+    ""
         Me.SqlConnection1.FireInfoMessageEventOnUserErrors = False
         '
         'BtnRechazar
@@ -196,6 +196,7 @@ Partial Class FrmSubDir
         Me.ListView1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ListView1.FullRowSelect = True
         Me.ListView1.GridLines = True
+        Me.ListView1.HideSelection = False
         Me.ListView1.Location = New System.Drawing.Point(24, 135)
         Me.ListView1.Name = "ListView1"
         Me.ListView1.Size = New System.Drawing.Size(742, 220)

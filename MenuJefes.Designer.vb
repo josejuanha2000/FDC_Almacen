@@ -32,6 +32,7 @@ Partial Class MenuJefes
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TBDepto = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -39,9 +40,9 @@ Partial Class MenuJefes
         '
         Me.BtnAutoriza.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnAutoriza.Image = Global.Almacen.My.Resources.Resources.online_writing
-        Me.BtnAutoriza.Location = New System.Drawing.Point(323, 151)
+        Me.BtnAutoriza.Location = New System.Drawing.Point(264, 151)
         Me.BtnAutoriza.Name = "BtnAutoriza"
-        Me.BtnAutoriza.Size = New System.Drawing.Size(149, 151)
+        Me.BtnAutoriza.Size = New System.Drawing.Size(208, 151)
         Me.BtnAutoriza.TabIndex = 1
         Me.BtnAutoriza.Text = "Autorización Titular"
         Me.BtnAutoriza.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -54,7 +55,7 @@ Partial Class MenuJefes
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.TopRight
         Me.Button1.Location = New System.Drawing.Point(66, 150)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(149, 151)
+        Me.Button1.Size = New System.Drawing.Size(199, 151)
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "Nuevo Requerimiento"
         Me.Button1.TextAlign = System.Drawing.ContentAlignment.TopLeft
@@ -62,7 +63,7 @@ Partial Class MenuJefes
         '
         'BtnSalir
         '
-        Me.BtnSalir.Location = New System.Drawing.Point(225, 338)
+        Me.BtnSalir.Location = New System.Drawing.Point(197, 369)
         Me.BtnSalir.Name = "BtnSalir"
         Me.BtnSalir.Size = New System.Drawing.Size(110, 38)
         Me.BtnSalir.TabIndex = 2
@@ -141,11 +142,23 @@ Partial Class MenuJefes
         Me.Label5.TabIndex = 0
         Me.Label5.Text = "Departamento:"
         '
+        'TextBox1
+        '
+        Me.TextBox1.Enabled = False
+        Me.TextBox1.Location = New System.Drawing.Point(44, 302)
+        Me.TextBox1.Multiline = True
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(442, 22)
+        Me.TextBox1.TabIndex = 10
+        Me.TextBox1.Text = "Despues de realizar un nuevo requerimiento, el siguiente paso es autorizar por el" &
+    " Titular"
+        '
         'MenuJefes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(528, 443)
+        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.BtnSalir)
         Me.Controls.Add(Me.BtnAutoriza)
@@ -155,6 +168,7 @@ Partial Class MenuJefes
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents Button1 As System.Windows.Forms.Button
@@ -167,4 +181,5 @@ Partial Class MenuJefes
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label_Id_Depto As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents TextBox1 As TextBox
 End Class

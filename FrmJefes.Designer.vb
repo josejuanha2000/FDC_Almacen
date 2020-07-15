@@ -23,12 +23,12 @@ Partial Class FrmJefes
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.BtnMostrar = New System.Windows.Forms.Button()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Label_Id_Depto = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.BtnMostrar = New System.Windows.Forms.Button()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.TBTitular = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TBDepto = New System.Windows.Forms.TextBox()
@@ -69,14 +69,15 @@ Partial Class FrmJefes
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Req."
         '
-        'BtnMostrar
+        'Label1
         '
-        Me.BtnMostrar.Location = New System.Drawing.Point(167, 59)
-        Me.BtnMostrar.Name = "BtnMostrar"
-        Me.BtnMostrar.Size = New System.Drawing.Size(58, 30)
-        Me.BtnMostrar.TabIndex = 12
-        Me.BtnMostrar.Text = "Mostrar"
-        Me.BtnMostrar.UseVisualStyleBackColor = True
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(91, 80)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(62, 13)
+        Me.Label1.TabIndex = 78
+        Me.Label1.Text = "ID Depto."
         '
         'DateTimePicker1
         '
@@ -85,6 +86,17 @@ Partial Class FrmJefes
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(228, 20)
         Me.DateTimePicker1.TabIndex = 1
+        '
+        'Label_Id_Depto
+        '
+        Me.Label_Id_Depto.AutoSize = True
+        Me.Label_Id_Depto.Enabled = False
+        Me.Label_Id_Depto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_Id_Depto.Location = New System.Drawing.Point(153, 80)
+        Me.Label_Id_Depto.Name = "Label_Id_Depto"
+        Me.Label_Id_Depto.Size = New System.Drawing.Size(20, 13)
+        Me.Label_Id_Depto.TabIndex = 79
+        Me.Label_Id_Depto.Text = "ID"
         '
         'Label3
         '
@@ -95,6 +107,15 @@ Partial Class FrmJefes
         Me.Label3.Size = New System.Drawing.Size(112, 13)
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "Fecha de Captura:"
+        '
+        'BtnMostrar
+        '
+        Me.BtnMostrar.Location = New System.Drawing.Point(167, 59)
+        Me.BtnMostrar.Name = "BtnMostrar"
+        Me.BtnMostrar.Size = New System.Drawing.Size(58, 30)
+        Me.BtnMostrar.TabIndex = 12
+        Me.BtnMostrar.Text = "Mostrar"
+        Me.BtnMostrar.UseVisualStyleBackColor = True
         '
         'GroupBox1
         '
@@ -108,27 +129,6 @@ Partial Class FrmJefes
         Me.GroupBox1.TabIndex = 8
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos:"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(91, 80)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(62, 13)
-        Me.Label1.TabIndex = 78
-        Me.Label1.Text = "ID Depto."
-        '
-        'Label_Id_Depto
-        '
-        Me.Label_Id_Depto.AutoSize = True
-        Me.Label_Id_Depto.Enabled = False
-        Me.Label_Id_Depto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_Id_Depto.Location = New System.Drawing.Point(153, 80)
-        Me.Label_Id_Depto.Name = "Label_Id_Depto"
-        Me.Label_Id_Depto.Size = New System.Drawing.Size(20, 13)
-        Me.Label_Id_Depto.TabIndex = 79
-        Me.Label_Id_Depto.Text = "ID"
         '
         'TBTitular
         '
@@ -174,6 +174,7 @@ Partial Class FrmJefes
         Me.ListView1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ListView1.FullRowSelect = True
         Me.ListView1.GridLines = True
+        Me.ListView1.HideSelection = False
         Me.ListView1.Location = New System.Drawing.Point(12, 134)
         Me.ListView1.Name = "ListView1"
         Me.ListView1.Size = New System.Drawing.Size(911, 220)
@@ -239,8 +240,8 @@ Partial Class FrmJefes
         '
         'SqlConnection1
         '
-        Me.SqlConnection1.ConnectionString = "Data Source=COLMASQLFDC01\FACDYCDES;Initial Catalog=ALMACEN;Integrated Security=T" & _
-    "rue"
+        Me.SqlConnection1.ConnectionString = "Data Source=148.234.110.22;Initial Catalog=ALMACEN;User ID=sa;Password=Facdyc2020" &
+    ""
         Me.SqlConnection1.FireInfoMessageEventOnUserErrors = False
         '
         'BtnRechazar

@@ -6,9 +6,37 @@ Imports System.Data.Odbc
 Imports System.Data.SqlClient
 Public Class FRMREQMAT
     Inherits System.Windows.Forms.Form
-
     Dim cbprod1 As New SqlCommand
     Dim cbprod2 As New SqlCommand
+
+    Dim cbprod3 As New SqlCommand
+    Dim cbprod4 As New SqlCommand
+
+    Dim cbprod5 As New SqlCommand
+    Dim cbprod6 As New SqlCommand
+
+    Dim cbprod7 As New SqlCommand
+    Dim cbprod8 As New SqlCommand
+
+    Dim cbprod9 As New SqlCommand
+    Dim cbprod10 As New SqlCommand
+
+    Dim cbprod11 As New SqlCommand
+    Dim cbprod12 As New SqlCommand
+
+    Dim cbprod13 As New SqlCommand
+    Dim cbprod14 As New SqlCommand
+
+    Dim cbprod15 As New SqlCommand
+    Dim cbprod16 As New SqlCommand
+
+    Dim cbprod17 As New SqlCommand
+    Dim cbprod18 As New SqlCommand
+
+    Dim cbprod19 As New SqlCommand
+    Dim cbprod20 As New SqlCommand
+
+
     Dim DAPRODUCTO As SqlDataReader
 
     Dim CTArt1 As New SqlCommand
@@ -69,12 +97,11 @@ Public Class FRMREQMAT
         TBTitular.Text = MenuJefes.TBTitular.Text
         Label_Id_Depto.Text = MenuJefes.Label_Id_Depto.Text
         Call buscar_ultimo_folio()
-        Call cargar_producto()
+        'Call cargar_producto()
         Call limpiar_costo_articulo()
-        'Call cargar_Art()
+
     End Sub
     Sub buscar_ultimo_folio()
-
         Try
             Me.SqlConnection1.Open()
             Dim comsql As New SqlClient.SqlCommand
@@ -111,7 +138,7 @@ Public Class FRMREQMAT
         End Try
         Me.SqlConnection1.Close()
     End Sub
-    Sub cargar_producto()
+    Sub cargar_producto1()
         Try
             Me.SqlConnection1.Open()
             cbprod1.CommandType = CommandType.Text
@@ -120,7 +147,7 @@ Public Class FRMREQMAT
             cbprod1.Connection = Me.SqlConnection1
             DAPRODUCTO = cbprod1.ExecuteReader()
             While DAPRODUCTO.Read = True
-                CBProducto.Items.Add(DAPRODUCTO.Item(0))
+                CBP1.Items.Add(DAPRODUCTO.Item(0))
             End While
         Catch ex As Exception
             MsgBox(ex.ToString)
@@ -133,34 +160,349 @@ Public Class FRMREQMAT
         Me.SqlConnection1.Close()
         'Call cargar_Art()
     End Sub
-    Private Sub CBProducto_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CBProducto.SelectedIndexChanged
+    Sub cargar_producto2()
+        Try
+            Me.SqlConnection1.Open()
+            cbprod3.CommandType = CommandType.Text
+            cbprod3.CommandText = ("select Nombre_Pro from producto")
+            'cbprod.CommandText = ("select cve_pro from producto")
+            cbprod3.Connection = Me.SqlConnection1
+            DAPRODUCTO = cbprod3.ExecuteReader()
+            While DAPRODUCTO.Read = True
+                CBP2.Items.Add(DAPRODUCTO.Item(0))
+            End While
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        cbprod4.CommandType = CommandType.StoredProcedure
+        cbprod4.Connection = Me.SqlConnection1
+        cbprod4.CommandText = ("Buscar_Articulo")
+        cbprod4.Parameters.Add("var_cve_producto", SqlDbType.NVarChar, 2)
+        DAPRODUCTO.Close()
+        Me.SqlConnection1.Close()
+        'Call cargar_Art()
+    End Sub
+    Sub cargar_producto3()
+        Try
+            Me.SqlConnection1.Open()
+            cbprod5.CommandType = CommandType.Text
+            cbprod5.CommandText = ("select Nombre_Pro from producto")
+            'cbprod.CommandText = ("select cve_pro from producto")
+            cbprod5.Connection = Me.SqlConnection1
+            DAPRODUCTO = cbprod5.ExecuteReader()
+            While DAPRODUCTO.Read = True
+                CBP3.Items.Add(DAPRODUCTO.Item(0))
+            End While
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        cbprod6.CommandType = CommandType.StoredProcedure
+        cbprod6.Connection = Me.SqlConnection1
+        cbprod6.CommandText = ("Buscar_Articulo")
+        cbprod6.Parameters.Add("var_cve_producto", SqlDbType.NVarChar, 2)
+        DAPRODUCTO.Close()
+        Me.SqlConnection1.Close()
+        'Call cargar_Art()
+    End Sub
+    Sub cargar_producto4()
+        Try
+            Me.SqlConnection1.Open()
+            cbprod7.CommandType = CommandType.Text
+            cbprod7.CommandText = ("select Nombre_Pro from producto")
+            'cbprod.CommandText = ("select cve_pro from producto")
+            cbprod7.Connection = Me.SqlConnection1
+            DAPRODUCTO = cbprod7.ExecuteReader()
+            While DAPRODUCTO.Read = True
+                CBP4.Items.Add(DAPRODUCTO.Item(0))
+            End While
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        cbprod8.CommandType = CommandType.StoredProcedure
+        cbprod8.Connection = Me.SqlConnection1
+        cbprod8.CommandText = ("Buscar_Articulo")
+        cbprod8.Parameters.Add("var_cve_producto", SqlDbType.NVarChar, 2)
+        DAPRODUCTO.Close()
+        Me.SqlConnection1.Close()
+        'Call cargar_Art()
+    End Sub
+    Sub cargar_producto5()
+        Try
+            Me.SqlConnection1.Open()
+            cbprod9.CommandType = CommandType.Text
+            cbprod9.CommandText = ("select Nombre_Pro from producto")
+            cbprod9.Connection = Me.SqlConnection1
+            DAPRODUCTO = cbprod9.ExecuteReader()
+            While DAPRODUCTO.Read = True
+                CBP5.Items.Add(DAPRODUCTO.Item(0))
+            End While
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        cbprod10.CommandType = CommandType.StoredProcedure
+        cbprod10.Connection = Me.SqlConnection1
+        cbprod10.CommandText = ("Buscar_Articulo")
+        cbprod10.Parameters.Add("var_cve_producto", SqlDbType.NVarChar, 2)
+        DAPRODUCTO.Close()
+        Me.SqlConnection1.Close()
+        'Call cargar_Art()
+    End Sub
+    Sub cargar_producto6()
+        Try
+            Me.SqlConnection1.Open()
+            cbprod11.CommandType = CommandType.Text
+            cbprod11.CommandText = ("select Nombre_Pro from producto")
+            cbprod11.Connection = Me.SqlConnection1
+            DAPRODUCTO = cbprod11.ExecuteReader()
+            While DAPRODUCTO.Read = True
+                CBP6.Items.Add(DAPRODUCTO.Item(0))
+            End While
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        cbprod12.CommandType = CommandType.StoredProcedure
+        cbprod12.Connection = Me.SqlConnection1
+        cbprod12.CommandText = ("Buscar_Articulo")
+        cbprod12.Parameters.Add("var_cve_producto", SqlDbType.NVarChar, 2)
+        DAPRODUCTO.Close()
+        Me.SqlConnection1.Close()
+        'Call cargar_Art()
+    End Sub
+
+    Sub cargar_producto7()
+        Try
+            Me.SqlConnection1.Open()
+            cbprod13.CommandType = CommandType.Text
+            cbprod13.CommandText = ("select Nombre_Pro from producto")
+            cbprod13.Connection = Me.SqlConnection1
+            DAPRODUCTO = cbprod13.ExecuteReader()
+            While DAPRODUCTO.Read = True
+                CBP7.Items.Add(DAPRODUCTO.Item(0))
+            End While
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        cbprod14.CommandType = CommandType.StoredProcedure
+        cbprod14.Connection = Me.SqlConnection1
+        cbprod14.CommandText = ("Buscar_Articulo")
+        cbprod14.Parameters.Add("var_cve_producto", SqlDbType.NVarChar, 2)
+        DAPRODUCTO.Close()
+        Me.SqlConnection1.Close()
+        'Call cargar_Art()
+    End Sub
+    Sub cargar_producto8()
+        Try
+            Me.SqlConnection1.Open()
+            cbprod15.CommandType = CommandType.Text
+            cbprod15.CommandText = ("select Nombre_Pro from producto")
+            cbprod15.Connection = Me.SqlConnection1
+            DAPRODUCTO = cbprod15.ExecuteReader()
+            While DAPRODUCTO.Read = True
+                CBP8.Items.Add(DAPRODUCTO.Item(0))
+            End While
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        cbprod16.CommandType = CommandType.StoredProcedure
+        cbprod16.Connection = Me.SqlConnection1
+        cbprod16.CommandText = ("Buscar_Articulo")
+        cbprod16.Parameters.Add("var_cve_producto", SqlDbType.NVarChar, 2)
+        DAPRODUCTO.Close()
+        Me.SqlConnection1.Close()
+        'Call cargar_Art()
+    End Sub
+    Sub cargar_producto9()
+        Try
+            Me.SqlConnection1.Open()
+            cbprod17.CommandType = CommandType.Text
+            cbprod17.CommandText = ("select Nombre_Pro from producto")
+            cbprod17.Connection = Me.SqlConnection1
+            DAPRODUCTO = cbprod17.ExecuteReader()
+            While DAPRODUCTO.Read = True
+                CBP9.Items.Add(DAPRODUCTO.Item(0))
+            End While
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        cbprod18.CommandType = CommandType.StoredProcedure
+        cbprod18.Connection = Me.SqlConnection1
+        cbprod18.CommandText = ("Buscar_Articulo")
+        cbprod18.Parameters.Add("var_cve_producto", SqlDbType.NVarChar, 2)
+        DAPRODUCTO.Close()
+        Me.SqlConnection1.Close()
+        'Call cargar_Art()
+    End Sub
+    Sub cargar_producto10()
+        Try
+            Me.SqlConnection1.Open()
+            cbprod19.CommandType = CommandType.Text
+            cbprod19.CommandText = ("select Nombre_Pro from producto")
+            cbprod19.Connection = Me.SqlConnection1
+            DAPRODUCTO = cbprod19.ExecuteReader()
+            While DAPRODUCTO.Read = True
+                CBP10.Items.Add(DAPRODUCTO.Item(0))
+            End While
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        cbprod20.CommandType = CommandType.StoredProcedure
+        cbprod20.Connection = Me.SqlConnection1
+        cbprod20.CommandText = ("Buscar_Articulo")
+        cbprod20.Parameters.Add("var_cve_producto", SqlDbType.NVarChar, 2)
+        DAPRODUCTO.Close()
+        Me.SqlConnection1.Close()
+        'Call cargar_Art()
+    End Sub
+
+    Private Sub CBP1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CBP1.SelectedIndexChanged
         'Dim cvepro As Char
         Try
             Me.SqlConnection1.Open()
-            cbprod2.Parameters("var_cve_producto").Value = CBProducto.SelectedItem
+            cbprod2.Parameters("var_cve_producto").Value = CBP1.SelectedItem
             DAPRODUCTO = cbprod2.ExecuteReader()
             DAPRODUCTO.Read()
-            TBCpro.Text = CStr(DAPRODUCTO("Cve_pro").toupper)
-            'TextBox2.Text = DAPRODUCTO("Cve_pro")
-            'Select CBProducto.SelectedItem
-            '   Case "AUDIOVISUAL"
-            'cvepro = "AU"
-            '   Case "CAFETERIA"
-            ' cvepro = "CA"
-            '    Case "COMPUTACION"
-            'cvepro = "CO"
-            'End Select
-            '''''''''''''''''''''''''''''''''''''''''''''''
-            'While DAPRODUCTO.Read = True
-            'CBA1.Items.Add(DAPRODUCTO.Item(0))
-            'CBA2.Items.Add(DAPRODUCTO.Item(0))
-            ' End While
+            TBAA1.Text = CStr(DAPRODUCTO("Area_Autorizacion").toupper)
+            TBCP1.Text = CStr(DAPRODUCTO("Cve_pro").toupper)
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try
         Me.SqlConnection1.Close()
-        'Call cargar_Art1()
-        'Call cargar_Art2()
+        Call cargar_Art1()
+    End Sub
+    Private Sub CBP2_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CBP2.SelectedIndexChanged
+        'Dim cvepro As Char
+        Try
+            Me.SqlConnection1.Open()
+            cbprod2.Parameters("var_cve_producto").Value = CBP2.SelectedItem
+            DAPRODUCTO = cbprod2.ExecuteReader()
+            DAPRODUCTO.Read()
+            TBAA2.Text = CStr(DAPRODUCTO("Area_Autorizacion").toupper)
+            TBCP2.Text = CStr(DAPRODUCTO("Cve_pro").toupper)
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        Me.SqlConnection1.Close()
+        Call cargar_Art2()
+    End Sub
+    Private Sub CBP3_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CBP3.SelectedIndexChanged
+        'Dim cvepro As Char
+        Try
+            Me.SqlConnection1.Open()
+            cbprod2.Parameters("var_cve_producto").Value = CBP3.SelectedItem
+            DAPRODUCTO = cbprod2.ExecuteReader()
+            DAPRODUCTO.Read()
+            TBAA3.Text = CStr(DAPRODUCTO("Area_Autorizacion").toupper)
+            TBCP3.Text = CStr(DAPRODUCTO("Cve_pro").toupper)
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        Me.SqlConnection1.Close()
+        Call cargar_Art3()
+    End Sub
+    Private Sub CBP4_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CBP4.SelectedIndexChanged
+        'Dim cvepro As Char
+        Try
+            Me.SqlConnection1.Open()
+            cbprod2.Parameters("var_cve_producto").Value = CBP4.SelectedItem
+            DAPRODUCTO = cbprod2.ExecuteReader()
+            DAPRODUCTO.Read()
+            TBAA4.Text = CStr(DAPRODUCTO("Area_Autorizacion").toupper)
+            TBCP4.Text = CStr(DAPRODUCTO("Cve_pro").toupper)
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        Me.SqlConnection1.Close()
+        Call cargar_Art4()
+    End Sub
+    Private Sub CBP5_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CBP5.SelectedIndexChanged
+        'Dim cvepro As Char
+        Try
+            Me.SqlConnection1.Open()
+            cbprod2.Parameters("var_cve_producto").Value = CBP5.SelectedItem
+            DAPRODUCTO = cbprod2.ExecuteReader()
+            DAPRODUCTO.Read()
+            TBAA5.Text = CStr(DAPRODUCTO("Area_Autorizacion").toupper)
+            TBCP5.Text = CStr(DAPRODUCTO("Cve_pro").toupper)
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        Me.SqlConnection1.Close()
+        Call cargar_Art5()
+    End Sub
+    Private Sub CBP6_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CBP6.SelectedIndexChanged
+        'Dim cvepro As Char
+        Try
+            Me.SqlConnection1.Open()
+            cbprod2.Parameters("var_cve_producto").Value = CBP6.SelectedItem
+            DAPRODUCTO = cbprod2.ExecuteReader()
+            DAPRODUCTO.Read()
+            TBAA6.Text = CStr(DAPRODUCTO("Area_Autorizacion").toupper)
+            TBCP6.Text = CStr(DAPRODUCTO("Cve_pro").toupper)
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        Me.SqlConnection1.Close()
+        Call cargar_Art6()
+    End Sub
+    Private Sub CBP7_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CBP7.SelectedIndexChanged
+        'Dim cvepro As Char
+        Try
+            Me.SqlConnection1.Open()
+            cbprod2.Parameters("var_cve_producto").Value = CBP7.SelectedItem
+            DAPRODUCTO = cbprod2.ExecuteReader()
+            DAPRODUCTO.Read()
+            TBAA7.Text = CStr(DAPRODUCTO("Area_Autorizacion").toupper)
+            TBCP7.Text = CStr(DAPRODUCTO("Cve_pro").toupper)
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        Me.SqlConnection1.Close()
+        Call cargar_Art7()
+    End Sub
+    Private Sub CBP8_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CBP8.SelectedIndexChanged
+        'Dim cvepro As Char
+        Try
+            Me.SqlConnection1.Open()
+            cbprod2.Parameters("var_cve_producto").Value = CBP8.SelectedItem
+            DAPRODUCTO = cbprod2.ExecuteReader()
+            DAPRODUCTO.Read()
+            TBAA8.Text = CStr(DAPRODUCTO("Area_Autorizacion").toupper)
+            TBCP8.Text = CStr(DAPRODUCTO("Cve_pro").toupper)
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        Me.SqlConnection1.Close()
+        Call cargar_Art8()
+    End Sub
+    Private Sub CBP9_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CBP9.SelectedIndexChanged
+        'Dim cvepro As Char
+        Try
+            Me.SqlConnection1.Open()
+            cbprod2.Parameters("var_cve_producto").Value = CBP9.SelectedItem
+            DAPRODUCTO = cbprod2.ExecuteReader()
+            DAPRODUCTO.Read()
+            TBAA9.Text = CStr(DAPRODUCTO("Area_Autorizacion").toupper)
+            TBCP9.Text = CStr(DAPRODUCTO("Cve_pro").toupper)
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        Me.SqlConnection1.Close()
+        Call cargar_Art9()
+    End Sub
+    Private Sub CBP10_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CBP10.SelectedIndexChanged
+        'Dim cvepro As Char
+        Try
+            Me.SqlConnection1.Open()
+            cbprod2.Parameters("var_cve_producto").Value = CBP10.SelectedItem
+            DAPRODUCTO = cbprod2.ExecuteReader()
+            DAPRODUCTO.Read()
+            TBAA10.Text = CStr(DAPRODUCTO("Area_Autorizacion").toupper)
+            TBCP10.Text = CStr(DAPRODUCTO("Cve_pro").toupper)
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        Me.SqlConnection1.Close()
+        Call cargar_Art10()
     End Sub
     Sub limpiar_formulario()
         CBA1.Items.Clear()
@@ -262,7 +604,7 @@ Public Class FRMREQMAT
             'CBA3.Items.Clear()
             CTArt1.CommandType = CommandType.Text
             'cbart1.CommandText = ("Select Nombre_art,Cve_Art,Cve_Pro from Articulo where Articulo.Cve_pro =  '" & TBCPro.Text & "'")
-            CTArt1.CommandText = ("Select Nombre_art,Cve_Art,Cve_Pro from Articulo where Articulo.Cve_pro =  '" & TBCpro.Text & "'order by Nombre_Art Asc")
+            CTArt1.CommandText = ("Select Nombre_art,Cve_Art,Cve_Pro from Articulo where Articulo.Cve_pro =  '" & TBCP1.Text & "'order by Nombre_Art Asc")
             'cbart1.CommandText = ("Select Nombre_art,Cve_Art,Cve_Pro from Articulo where Articulo.Cve_pro =  'AU'")
             CTArt1.Connection = Me.SqlConnection1
             'EJEMPLO'' "select * from clientes where rfc = '" & rfctxt.text & " ' "
@@ -291,7 +633,7 @@ Public Class FRMREQMAT
             Me.SqlConnection1.Open()
             CBA2.Items.Clear()
             CTArt2.CommandType = CommandType.Text
-            CTArt2.CommandText = ("Select Nombre_art,Cve_Art,Cve_Pro from Articulo where Articulo.Cve_pro =  '" & TBCpro.Text & "'order by Nombre_Art Asc")
+            CTArt2.CommandText = ("Select Nombre_art,Cve_Art,Cve_Pro from Articulo where Articulo.Cve_pro =  '" & TBCP2.Text & "'order by Nombre_Art Asc")
             CTArt2.Connection = Me.SqlConnection1
             DAARTICULO2 = CTArt2.ExecuteReader()
             'DAARTICULO2.Read()
@@ -309,7 +651,7 @@ Public Class FRMREQMAT
             Me.SqlConnection1.Open()
             CBA3.Items.Clear()
             CTArt3.CommandType = CommandType.Text
-            CTArt3.CommandText = ("Select Nombre_art,Cve_Art,Cve_Pro from Articulo where Articulo.Cve_pro =  '" & TBCpro.Text & "'order by Nombre_Art Asc")
+            CTArt3.CommandText = ("Select Nombre_art,Cve_Art,Cve_Pro from Articulo where Articulo.Cve_pro =  '" & TBCP3.Text & "'order by Nombre_Art Asc")
             CTArt3.Connection = Me.SqlConnection1
             DAARTICULO3 = CTArt3.ExecuteReader()
             While DAARTICULO3.Read = True
@@ -326,7 +668,7 @@ Public Class FRMREQMAT
             Me.SqlConnection1.Open()
             CBA4.Items.Clear()
             CTArt4.CommandType = CommandType.Text
-            CTArt4.CommandText = ("Select Nombre_art,Cve_Art,Cve_Pro from Articulo where Articulo.Cve_pro =  '" & TBCpro.Text & "'order by Nombre_Art Asc")
+            CTArt4.CommandText = ("Select Nombre_art,Cve_Art,Cve_Pro from Articulo where Articulo.Cve_pro =  '" & TBCP4.Text & "'order by Nombre_Art Asc")
             CTArt4.Connection = Me.SqlConnection1
             DAARTICULO4 = CTArt4.ExecuteReader()
             While DAARTICULO4.Read = True
@@ -343,7 +685,7 @@ Public Class FRMREQMAT
             Me.SqlConnection1.Open()
             CBA5.Items.Clear()
             CTArt5.CommandType = CommandType.Text
-            CTArt5.CommandText = ("Select Nombre_art,Cve_Art,Cve_Pro from Articulo where Articulo.Cve_pro =  '" & TBCpro.Text & "'order by Nombre_Art Asc")
+            CTArt5.CommandText = ("Select Nombre_art,Cve_Art,Cve_Pro from Articulo where Articulo.Cve_pro =  '" & TBCP5.Text & "'order by Nombre_Art Asc")
             CTArt5.Connection = Me.SqlConnection1
             DAARTICULO5 = CTArt5.ExecuteReader()
             While DAARTICULO5.Read = True
@@ -360,7 +702,7 @@ Public Class FRMREQMAT
             Me.SqlConnection1.Open()
             CBA6.Items.Clear()
             CTArt6.CommandType = CommandType.Text
-            CTArt6.CommandText = ("Select Nombre_art,Cve_Art,Cve_Pro from Articulo where Articulo.Cve_pro =  '" & TBCpro.Text & "'order by Nombre_Art Asc")
+            CTArt6.CommandText = ("Select Nombre_art,Cve_Art,Cve_Pro from Articulo where Articulo.Cve_pro =  '" & TBCP6.Text & "'order by Nombre_Art Asc")
             CTArt6.Connection = Me.SqlConnection1
             DAARTICULO6 = CTArt6.ExecuteReader()
             While DAARTICULO6.Read = True
@@ -377,7 +719,7 @@ Public Class FRMREQMAT
             Me.SqlConnection1.Open()
             CBA7.Items.Clear()
             CTArt7.CommandType = CommandType.Text
-            CTArt7.CommandText = ("Select Nombre_art,Cve_Art,Cve_Pro from Articulo where Articulo.Cve_pro =  '" & TBCpro.Text & "'order by Nombre_Art Asc")
+            CTArt7.CommandText = ("Select Nombre_art,Cve_Art,Cve_Pro from Articulo where Articulo.Cve_pro =  '" & TBCP7.Text & "'order by Nombre_Art Asc")
             CTArt7.Connection = Me.SqlConnection1
             DAARTICULO7 = CTArt7.ExecuteReader()
             While DAARTICULO7.Read = True
@@ -394,7 +736,7 @@ Public Class FRMREQMAT
             Me.SqlConnection1.Open()
             CBA8.Items.Clear()
             CTArt8.CommandType = CommandType.Text
-            CTArt8.CommandText = ("Select Nombre_art,Cve_Art,Cve_Pro from Articulo where Articulo.Cve_pro =  '" & TBCpro.Text & "'order by Nombre_Art Asc")
+            CTArt8.CommandText = ("Select Nombre_art,Cve_Art,Cve_Pro from Articulo where Articulo.Cve_pro =  '" & TBCP8.Text & "'order by Nombre_Art Asc")
             CTArt8.Connection = Me.SqlConnection1
             DAARTICULO8 = CTArt8.ExecuteReader()
             While DAARTICULO8.Read = True
@@ -411,7 +753,7 @@ Public Class FRMREQMAT
             Me.SqlConnection1.Open()
             CBA9.Items.Clear()
             CTArt9.CommandType = CommandType.Text
-            CTArt9.CommandText = ("Select Nombre_art,Cve_Art,Cve_Pro from Articulo where Articulo.Cve_pro =  '" & TBCpro.Text & "'order by Nombre_Art Asc")
+            CTArt9.CommandText = ("Select Nombre_art,Cve_Art,Cve_Pro from Articulo where Articulo.Cve_pro =  '" & TBCP9.Text & "'order by Nombre_Art Asc")
             CTArt9.Connection = Me.SqlConnection1
             DAARTICULO9 = CTArt9.ExecuteReader()
             While DAARTICULO9.Read = True
@@ -428,7 +770,7 @@ Public Class FRMREQMAT
             Me.SqlConnection1.Open()
             CBA10.Items.Clear()
             CTArt10.CommandType = CommandType.Text
-            CTArt10.CommandText = ("Select Nombre_art,Cve_Art,Cve_Pro from Articulo where Articulo.Cve_pro =  '" & TBCpro.Text & "'order by Nombre_Art Asc")
+            CTArt10.CommandText = ("Select Nombre_art,Cve_Art,Cve_Pro from Articulo where Articulo.Cve_pro =  '" & TBCP10.Text & "'order by Nombre_Art Asc")
             CTArt10.Connection = Me.SqlConnection1
             DAARTICULO10 = CTArt10.ExecuteReader()
             While DAARTICULO10.Read = True
@@ -609,8 +951,11 @@ Public Class FRMREQMAT
     End Sub
     Private Sub CheckBox1_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox1.CheckedChanged
         If CheckBox1.Checked = True Then
-            Call cargar_Art1()
+            'Call cargar_Art1()
+            Call cargar_producto1()
             req1 = 1
+            CBP1.Enabled = True
+            'TBAA1.Enabled = True
             CBA1.Enabled = True
             TB1.Enabled = True
             NUpDown1.Enabled = True
@@ -625,8 +970,10 @@ Public Class FRMREQMAT
     End Sub
     Private Sub CheckBox2_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox2.CheckedChanged
         If CheckBox2.Checked = True Then
-            Call cargar_Art2()
+            'Call cargar_Art2()
+            Call cargar_producto2()
             req2 = 2
+            CBP2.Enabled = True
             CBA2.Enabled = True
             TB2.Enabled = True
             NUpDown2.Enabled = True
@@ -641,8 +988,10 @@ Public Class FRMREQMAT
     End Sub
     Private Sub CheckBox3_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox3.CheckedChanged
         If CheckBox3.Checked = True Then
-            Call cargar_Art3()
+            'Call cargar_Art3()
+            Call cargar_producto3()
             req3 = 3
+            CBP3.Enabled = True
             CBA3.Enabled = True
             TB3.Enabled = True
             NUpDown3.Enabled = True
@@ -657,8 +1006,10 @@ Public Class FRMREQMAT
     End Sub
     Private Sub CheckBox4_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox4.CheckedChanged
         If CheckBox4.Checked = True Then
-            Call cargar_Art4()
+            'Call cargar_Art4()
+            Call cargar_producto4()
             req4 = 4
+            CBP4.Enabled = True
             CBA4.Enabled = True
             TB4.Enabled = True
             NUpDown4.Enabled = True
@@ -673,8 +1024,10 @@ Public Class FRMREQMAT
     End Sub
     Private Sub CheckBox5_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox5.CheckedChanged
         If CheckBox5.Checked = True Then
-            Call cargar_Art5()
+            'Call cargar_Art5()
+            Call cargar_producto5()
             req5 = 5
+            CBP5.Enabled = True
             CBA5.Enabled = True
             TB5.Enabled = True
             NUpDown5.Enabled = True
@@ -689,8 +1042,10 @@ Public Class FRMREQMAT
     End Sub
     Private Sub CheckBox6_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox6.CheckedChanged
         If CheckBox6.Checked = True Then
-            Call cargar_Art6()
+            'Call cargar_Art6()
+            Call cargar_producto6()
             req6 = 6
+            CBP6.Enabled = True
             CBA6.Enabled = True
             TB6.Enabled = True
             NUpDown6.Enabled = True
@@ -705,8 +1060,10 @@ Public Class FRMREQMAT
     End Sub
     Private Sub CheckBox7_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox7.CheckedChanged
         If CheckBox7.Checked = True Then
-            Call cargar_Art7()
+            'Call cargar_Art7()
+            Call cargar_producto7()
             req7 = 7
+            CBP7.Enabled = True
             CBA7.Enabled = True
             TB7.Enabled = True
             NUpDown7.Enabled = True
@@ -721,8 +1078,10 @@ Public Class FRMREQMAT
     End Sub
     Private Sub CheckBox8_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox8.CheckedChanged
         If CheckBox8.Checked = True Then
-            Call cargar_Art8()
+            'Call cargar_Art8()
+            Call cargar_producto8()
             req8 = 8
+            CBP8.Enabled = True
             CBA8.Enabled = True
             TB8.Enabled = True
             NUpDown8.Enabled = True
@@ -737,8 +1096,10 @@ Public Class FRMREQMAT
     End Sub
     Private Sub CheckBox9_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox9.CheckedChanged
         If CheckBox9.Checked = True Then
-            Call cargar_Art9()
+            'Call cargar_Art9()
+            Call cargar_producto9()
             req9 = 9
+            CBP9.Enabled = True
             CBA9.Enabled = True
             TB9.Enabled = True
             NUpDown9.Enabled = True
@@ -753,8 +1114,10 @@ Public Class FRMREQMAT
     End Sub
     Private Sub CheckBox10_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox10.CheckedChanged
         If CheckBox10.Checked = True Then
-            Call cargar_Art10()
+            'Call cargar_Art10()
+            Call cargar_producto10()
             req10 = 10
+            CBP10.Enabled = True
             CBA10.Enabled = True
             TB10.Enabled = True
             NUpDown10.Enabled = True
@@ -787,10 +1150,11 @@ Public Class FRMREQMAT
         'Call buscar_clave_producto()
         Try
             Me.SqlConnection1.Open()
-            Dim Insar1 As String = "INSERT INTO Requerimiento (Folio,Cve_Pro,Cve_Art,Nombre_Art,Fecha_Cap_Req,Depto,Titular_Depto,Cant_Art,Justificacion,Act,Status_titular,Status_Sub_Adm,Status_Direccion,No_Factura,No_Compra,Precio_Unitario,Total_x_Cantidad,IVA,Total_IVA,Status_Entrega,Id_Depto) values(@Folio,@Cve_Pro,@Cve_Art,@Nombre_Art,@Fecha_Cap_Req,@Depto,@Titular_Depto,@Cant_Art,@Justificacion,@Act,@Status_titular,@Status_Sub_Adm,@Status_Direccion,@No_Factura,@No_Compra,@Precio_Unitario,@Total_x_Cantidad,@IVA,@Total_IVA,@Status_Entrega,@Id_Depto)"
+            Dim Insar1 As String = "INSERT INTO Requerimiento (Folio,Cve_Pro,Cve_Art,Nombre_Art,Fecha_Cap_Req,Depto,Titular_Depto,Cant_Art,Justificacion,Act,Status_titular,Status_Sub_Adm,Status_Direccion,No_Factura,No_Compra,Precio_Unitario,Total_x_Cantidad,IVA,Total_IVA,Status_Entrega,Id_Depto,Cve_Area_Autoriza) values(@Folio,@Cve_Pro,@Cve_Art,@Nombre_Art,@Fecha_Cap_Req,@Depto,@Titular_Depto,@Cant_Art,@Justificacion,@Act,@Status_titular,@Status_Sub_Adm,@Status_Direccion,@No_Factura,@No_Compra,@Precio_Unitario,@Total_x_Cantidad,@IVA,@Total_IVA,@Status_Entrega,@Id_Depto,@Cve_Area_Autoriza)"
             Dim conex1 As New SqlClient.SqlCommand(Insar1, Me.SqlConnection1)
             conex1.Parameters.Add(New SqlParameter("@Folio", SqlDbType.Int, 4)).Value = Me.TBFolio.Text
-            conex1.Parameters.Add(New SqlParameter("@Cve_Pro", SqlDbType.NVarChar, 2)).Value = Mid(Me.Label21.Text, 1, 2)
+            'conex1.Parameters.Add(New SqlParameter("@Cve_Pro", SqlDbType.NVarChar, 2)).Value = Mid(Me.Label21.Text, 1, 2)
+            conex1.Parameters.Add(New SqlParameter("@Cve_Pro", SqlDbType.NVarChar, 2)).Value = Me.TBCP1.Text
             conex1.Parameters.Add(New SqlParameter("@Cve_Art", SqlDbType.NVarChar, 5)).Value = Me.Label21.Text
             conex1.Parameters.Add(New SqlParameter("@Nombre_Art", SqlDbType.NVarChar, 50)).Value = Me.CBA1.Text
             conex1.Parameters.Add(New SqlParameter("@Fecha_Cap_Req", SqlDbType.SmallDateTime)).Value = DateTimePicker1.Text
@@ -811,6 +1175,7 @@ Public Class FRMREQMAT
             conex1.Parameters.Add(New SqlParameter("@Total_IVA", SqlDbType.Decimal, 9)).Value = 0
             conex1.Parameters.Add(New SqlParameter("@Status_Entrega", SqlDbType.NChar, 1)).Value = ""
             conex1.Parameters.Add(New SqlParameter("@Id_Depto", SqlDbType.Int, 2)).Value = Me.Label_Id_Depto.Text
+            conex1.Parameters.Add(New SqlParameter("@Cve_Area_Autoriza", SqlDbType.NChar, 10)).Value = Mid(Me.TBAA1.Text, 1, 1)
 
             conex1.CommandText = Insar1
             conex1.ExecuteNonQuery()
@@ -824,10 +1189,12 @@ Public Class FRMREQMAT
     Sub requerimiento2()
         Try
             Me.SqlConnection1.Open()
-            Dim Insar2 As String = "INSERT INTO Requerimiento (Folio,Cve_Pro,Cve_Art,Nombre_Art,Fecha_Cap_Req,Depto,Titular_Depto,Cant_Art,Justificacion,Act,Status_titular,Status_Sub_Adm,Status_Direccion,No_Factura,No_Compra,Precio_Unitario,Total_x_Cantidad,IVA,Total_IVA,Status_Entrega,Id_Depto) values(@Folio,@Cve_Pro,@Cve_Art,@Nombre_Art,@Fecha_Cap_Req,@Depto,@Titular_Depto,@Cant_Art,@Justificacion,@Act,@Status_titular,@Status_Sub_Adm,@Status_Direccion,@No_Factura,@No_Compra,@Precio_Unitario,@Total_x_Cantidad,@IVA,@Total_IVA,@Status_Entrega,@Id_Depto)"
-            Dim conex1 As New SqlClient.SqlCommand(insar2, Me.SqlConnection1)
+            Dim Insar2 As String = "INSERT INTO Requerimiento (Folio,Cve_Pro,Cve_Art,Nombre_Art,Fecha_Cap_Req,Depto,Titular_Depto,Cant_Art,Justificacion,Act,Status_titular,Status_Sub_Adm,Status_Direccion,No_Factura,No_Compra,Precio_Unitario,Total_x_Cantidad,IVA,Total_IVA,Status_Entrega,Id_Depto,Cve_Area_Autoriza) values(@Folio,@Cve_Pro,@Cve_Art,@Nombre_Art,@Fecha_Cap_Req,@Depto,@Titular_Depto,@Cant_Art,@Justificacion,@Act,@Status_titular,@Status_Sub_Adm,@Status_Direccion,@No_Factura,@No_Compra,@Precio_Unitario,@Total_x_Cantidad,@IVA,@Total_IVA,@Status_Entrega,@Id_Depto,@Cve_Area_Autoriza)"
+            'Dim Insar2 As String = "INSERT INTO Requerimiento (Folio,Cve_Pro,Cve_Art,Nombre_Art,Fecha_Cap_Req,Depto,Titular_Depto,Cant_Art,Justificacion,Act,Status_titular,Status_Sub_Adm,Status_Direccion,No_Factura,No_Compra,Precio_Unitario,Total_x_Cantidad,IVA,Total_IVA,Status_Entrega,Id_Depto) values(@Folio,@Cve_Pro,@Cve_Art,@Nombre_Art,@Fecha_Cap_Req,@Depto,@Titular_Depto,@Cant_Art,@Justificacion,@Act,@Status_titular,@Status_Sub_Adm,@Status_Direccion,@No_Factura,@No_Compra,@Precio_Unitario,@Total_x_Cantidad,@IVA,@Total_IVA,@Status_Entrega,@Id_Depto)"
+            Dim conex1 As New SqlClient.SqlCommand(Insar2, Me.SqlConnection1)
             conex1.Parameters.Add(New SqlParameter("@Folio", SqlDbType.Int, 4)).Value = Me.TBFolio.Text
-            conex1.Parameters.Add(New SqlParameter("@Cve_Pro", SqlDbType.NVarChar, 2)).Value = Mid(Me.Label22.Text, 1, 2)
+            'conex1.Parameters.Add(New SqlParameter("@Cve_Pro", SqlDbType.NVarChar, 2)).Value = Mid(Me.Label22.Text, 1, 2)
+            conex1.Parameters.Add(New SqlParameter("@Cve_Pro", SqlDbType.NVarChar, 2)).Value = Me.TBCP2.Text
             conex1.Parameters.Add(New SqlParameter("@Cve_Art", SqlDbType.NVarChar, 5)).Value = Me.Label22.Text
             conex1.Parameters.Add(New SqlParameter("@Nombre_Art", SqlDbType.NVarChar, 50)).Value = Me.CBA2.Text
             conex1.Parameters.Add(New SqlParameter("@Fecha_Cap_Req", SqlDbType.SmallDateTime)).Value = DateTimePicker1.Text
@@ -848,8 +1215,9 @@ Public Class FRMREQMAT
             conex1.Parameters.Add(New SqlParameter("@Total_IVA", SqlDbType.Decimal, 9)).Value = 0
             conex1.Parameters.Add(New SqlParameter("@Status_Entrega", SqlDbType.NChar, 1)).Value = ""
             conex1.Parameters.Add(New SqlParameter("@Id_Depto", SqlDbType.Int, 2)).Value = Me.Label_Id_Depto.Text
+            conex1.Parameters.Add(New SqlParameter("@Cve_Area_Autoriza", SqlDbType.NChar, 10)).Value = Mid(Me.TBAA2.Text, 1, 1)
 
-            conex1.CommandText = insar2
+            conex1.CommandText = Insar2
             conex1.ExecuteNonQuery()
             'MsgBox("Datos guardados correctamente", , "Guardar")
             Me.SqlConnection1.Close()
@@ -861,10 +1229,12 @@ Public Class FRMREQMAT
     Sub requerimiento3()
         Try
             Me.SqlConnection1.Open()
-            Dim Insar3 As String = "INSERT INTO Requerimiento (Folio,Cve_Pro,Cve_Art,Nombre_Art,Fecha_Cap_Req,Depto,Titular_Depto,Cant_Art,Justificacion,Act,Status_titular,Status_Sub_Adm,Status_Direccion,No_Factura,No_Compra,Precio_Unitario,Total_x_Cantidad,IVA,Total_IVA,Status_Entrega,Id_Depto) values(@Folio,@Cve_Pro,@Cve_Art,@Nombre_Art,@Fecha_Cap_Req,@Depto,@Titular_Depto,@Cant_Art,@Justificacion,@Act,@Status_titular,@Status_Sub_Adm,@Status_Direccion,@No_Factura,@No_Compra,@Precio_Unitario,@Total_x_Cantidad,@IVA,@Total_IVA,@Status_Entrega,@Id_Depto)"
-            Dim conex1 As New SqlClient.SqlCommand(insar3, Me.SqlConnection1)
+            'Dim Insar3 As String = "INSERT INTO Requerimiento (Folio,Cve_Pro,Cve_Art,Nombre_Art,Fecha_Cap_Req,Depto,Titular_Depto,Cant_Art,Justificacion,Act,Status_titular,Status_Sub_Adm,Status_Direccion,No_Factura,No_Compra,Precio_Unitario,Total_x_Cantidad,IVA,Total_IVA,Status_Entrega,Id_Depto) values(@Folio,@Cve_Pro,@Cve_Art,@Nombre_Art,@Fecha_Cap_Req,@Depto,@Titular_Depto,@Cant_Art,@Justificacion,@Act,@Status_titular,@Status_Sub_Adm,@Status_Direccion,@No_Factura,@No_Compra,@Precio_Unitario,@Total_x_Cantidad,@IVA,@Total_IVA,@Status_Entrega,@Id_Depto)"
+            Dim Insar3 As String = "INSERT INTO Requerimiento (Folio,Cve_Pro,Cve_Art,Nombre_Art,Fecha_Cap_Req,Depto,Titular_Depto,Cant_Art,Justificacion,Act,Status_titular,Status_Sub_Adm,Status_Direccion,No_Factura,No_Compra,Precio_Unitario,Total_x_Cantidad,IVA,Total_IVA,Status_Entrega,Id_Depto,Cve_Area_Autoriza) values(@Folio,@Cve_Pro,@Cve_Art,@Nombre_Art,@Fecha_Cap_Req,@Depto,@Titular_Depto,@Cant_Art,@Justificacion,@Act,@Status_titular,@Status_Sub_Adm,@Status_Direccion,@No_Factura,@No_Compra,@Precio_Unitario,@Total_x_Cantidad,@IVA,@Total_IVA,@Status_Entrega,@Id_Depto,@Cve_Area_Autoriza)"
+            Dim conex1 As New SqlClient.SqlCommand(Insar3, Me.SqlConnection1)
             conex1.Parameters.Add(New SqlParameter("@Folio", SqlDbType.Int, 4)).Value = Me.TBFolio.Text
-            conex1.Parameters.Add(New SqlParameter("@Cve_Pro", SqlDbType.NVarChar, 2)).Value = Mid(Me.Label23.Text, 1, 2)
+            'conex1.Parameters.Add(New SqlParameter("@Cve_Pro", SqlDbType.NVarChar, 2)).Value = Mid(Me.Label23.Text, 1, 2)
+            conex1.Parameters.Add(New SqlParameter("@Cve_Pro", SqlDbType.NVarChar, 2)).Value = Me.TBCP3.Text
             conex1.Parameters.Add(New SqlParameter("@Cve_Art", SqlDbType.NVarChar, 5)).Value = Me.Label23.Text
             conex1.Parameters.Add(New SqlParameter("@Nombre_Art", SqlDbType.NVarChar, 50)).Value = Me.CBA3.Text
             conex1.Parameters.Add(New SqlParameter("@Fecha_Cap_Req", SqlDbType.SmallDateTime)).Value = DateTimePicker1.Text
@@ -885,8 +1255,8 @@ Public Class FRMREQMAT
             conex1.Parameters.Add(New SqlParameter("@Total_IVA", SqlDbType.Decimal, 9)).Value = 0
             conex1.Parameters.Add(New SqlParameter("@Status_Entrega", SqlDbType.NChar, 1)).Value = ""
             conex1.Parameters.Add(New SqlParameter("@Id_Depto", SqlDbType.Int, 2)).Value = Me.Label_Id_Depto.Text
-
-            conex1.CommandText = insar3
+            conex1.Parameters.Add(New SqlParameter("@Cve_Area_Autoriza", SqlDbType.NChar, 10)).Value = Mid(Me.TBAA3.Text, 1, 1)
+            conex1.CommandText = Insar3
             conex1.ExecuteNonQuery()
             Me.SqlConnection1.Close()
         Catch es As Exception
@@ -896,10 +1266,12 @@ Public Class FRMREQMAT
     Sub requerimiento4()
         Try
             Me.SqlConnection1.Open()
-            Dim Insar4 As String = "INSERT INTO Requerimiento (Folio,Cve_Pro,Cve_Art,Nombre_Art,Fecha_Cap_Req,Depto,Titular_Depto,Cant_Art,Justificacion,Act,Status_titular,Status_Sub_Adm,Status_Direccion,No_Factura,No_Compra,Precio_Unitario,Total_x_Cantidad,IVA,Total_IVA,Status_Entrega,Id_Depto) values(@Folio,@Cve_Pro,@Cve_Art,@Nombre_Art,@Fecha_Cap_Req,@Depto,@Titular_Depto,@Cant_Art,@Justificacion,@Act,@Status_titular,@Status_Sub_Adm,@Status_Direccion,@No_Factura,@No_Compra,@Precio_Unitario,@Total_x_Cantidad,@IVA,@Total_IVA,@Status_Entrega,@Id_Depto)"
-            Dim conex1 As New SqlClient.SqlCommand(insar4, Me.SqlConnection1)
+            'Dim Insar4 As String = "INSERT INTO Requerimiento (Folio,Cve_Pro,Cve_Art,Nombre_Art,Fecha_Cap_Req,Depto,Titular_Depto,Cant_Art,Justificacion,Act,Status_titular,Status_Sub_Adm,Status_Direccion,No_Factura,No_Compra,Precio_Unitario,Total_x_Cantidad,IVA,Total_IVA,Status_Entrega,Id_Depto) values(@Folio,@Cve_Pro,@Cve_Art,@Nombre_Art,@Fecha_Cap_Req,@Depto,@Titular_Depto,@Cant_Art,@Justificacion,@Act,@Status_titular,@Status_Sub_Adm,@Status_Direccion,@No_Factura,@No_Compra,@Precio_Unitario,@Total_x_Cantidad,@IVA,@Total_IVA,@Status_Entrega,@Id_Depto)"
+            Dim Insar4 As String = "INSERT INTO Requerimiento (Folio,Cve_Pro,Cve_Art,Nombre_Art,Fecha_Cap_Req,Depto,Titular_Depto,Cant_Art,Justificacion,Act,Status_titular,Status_Sub_Adm,Status_Direccion,No_Factura,No_Compra,Precio_Unitario,Total_x_Cantidad,IVA,Total_IVA,Status_Entrega,Id_Depto,Cve_Area_Autoriza) values(@Folio,@Cve_Pro,@Cve_Art,@Nombre_Art,@Fecha_Cap_Req,@Depto,@Titular_Depto,@Cant_Art,@Justificacion,@Act,@Status_titular,@Status_Sub_Adm,@Status_Direccion,@No_Factura,@No_Compra,@Precio_Unitario,@Total_x_Cantidad,@IVA,@Total_IVA,@Status_Entrega,@Id_Depto,@Cve_Area_Autoriza)"
+            Dim conex1 As New SqlClient.SqlCommand(Insar4, Me.SqlConnection1)
             conex1.Parameters.Add(New SqlParameter("@Folio", SqlDbType.Int, 4)).Value = Me.TBFolio.Text
-            conex1.Parameters.Add(New SqlParameter("@Cve_Pro", SqlDbType.NVarChar, 2)).Value = Mid(Me.Label24.Text, 1, 2)
+            'conex1.Parameters.Add(New SqlParameter("@Cve_Pro", SqlDbType.NVarChar, 2)).Value = Mid(Me.Label24.Text, 1, 2)
+            conex1.Parameters.Add(New SqlParameter("@Cve_Pro", SqlDbType.NVarChar, 2)).Value = Me.TBCP4.Text
             conex1.Parameters.Add(New SqlParameter("@Cve_Art", SqlDbType.NVarChar, 5)).Value = Me.Label24.Text
             conex1.Parameters.Add(New SqlParameter("@Nombre_Art", SqlDbType.NVarChar, 50)).Value = Me.CBA4.Text
             conex1.Parameters.Add(New SqlParameter("@Fecha_Cap_Req", SqlDbType.SmallDateTime)).Value = DateTimePicker1.Text
@@ -920,7 +1292,8 @@ Public Class FRMREQMAT
             conex1.Parameters.Add(New SqlParameter("@Total_IVA", SqlDbType.Decimal, 9)).Value = 0
             conex1.Parameters.Add(New SqlParameter("@Status_Entrega", SqlDbType.NChar, 1)).Value = ""
             conex1.Parameters.Add(New SqlParameter("@Id_Depto", SqlDbType.Int, 2)).Value = Me.Label_Id_Depto.Text
-            conex1.CommandText = insar4
+            conex1.Parameters.Add(New SqlParameter("@Cve_Area_Autoriza", SqlDbType.NChar, 10)).Value = Mid(Me.TBAA4.Text, 1, 1)
+            conex1.CommandText = Insar4
             conex1.ExecuteNonQuery()
             Me.SqlConnection1.Close()
         Catch es As Exception
@@ -930,10 +1303,12 @@ Public Class FRMREQMAT
     Sub requerimiento5()
         Try
             Me.SqlConnection1.Open()
-            Dim Insar5 As String = "INSERT INTO Requerimiento (Folio,Cve_Pro,Cve_Art,Nombre_Art,Fecha_Cap_Req,Depto,Titular_Depto,Cant_Art,Justificacion,Act,Status_titular,Status_Sub_Adm,Status_Direccion,No_Factura,No_Compra,Precio_Unitario,Total_x_Cantidad,IVA,Total_IVA,Status_Entrega,Id_Depto) values(@Folio,@Cve_Pro,@Cve_Art,@Nombre_Art,@Fecha_Cap_Req,@Depto,@Titular_Depto,@Cant_Art,@Justificacion,@Act,@Status_titular,@Status_Sub_Adm,@Status_Direccion,@No_Factura,@No_Compra,@Precio_Unitario,@Total_x_Cantidad,@IVA,@Total_IVA,@Status_Entrega,@Id_Depto)"
-            Dim conex1 As New SqlClient.SqlCommand(insar5, Me.SqlConnection1)
+            'Dim Insar5 As String = "INSERT INTO Requerimiento (Folio,Cve_Pro,Cve_Art,Nombre_Art,Fecha_Cap_Req,Depto,Titular_Depto,Cant_Art,Justificacion,Act,Status_titular,Status_Sub_Adm,Status_Direccion,No_Factura,No_Compra,Precio_Unitario,Total_x_Cantidad,IVA,Total_IVA,Status_Entrega,Id_Depto) values(@Folio,@Cve_Pro,@Cve_Art,@Nombre_Art,@Fecha_Cap_Req,@Depto,@Titular_Depto,@Cant_Art,@Justificacion,@Act,@Status_titular,@Status_Sub_Adm,@Status_Direccion,@No_Factura,@No_Compra,@Precio_Unitario,@Total_x_Cantidad,@IVA,@Total_IVA,@Status_Entrega,@Id_Depto)"
+            Dim Insar5 As String = "INSERT INTO Requerimiento (Folio,Cve_Pro,Cve_Art,Nombre_Art,Fecha_Cap_Req,Depto,Titular_Depto,Cant_Art,Justificacion,Act,Status_titular,Status_Sub_Adm,Status_Direccion,No_Factura,No_Compra,Precio_Unitario,Total_x_Cantidad,IVA,Total_IVA,Status_Entrega,Id_Depto,Cve_Area_Autoriza) values(@Folio,@Cve_Pro,@Cve_Art,@Nombre_Art,@Fecha_Cap_Req,@Depto,@Titular_Depto,@Cant_Art,@Justificacion,@Act,@Status_titular,@Status_Sub_Adm,@Status_Direccion,@No_Factura,@No_Compra,@Precio_Unitario,@Total_x_Cantidad,@IVA,@Total_IVA,@Status_Entrega,@Id_Depto,@Cve_Area_Autoriza)"
+            Dim conex1 As New SqlClient.SqlCommand(Insar5, Me.SqlConnection1)
             conex1.Parameters.Add(New SqlParameter("@Folio", SqlDbType.Int, 4)).Value = Me.TBFolio.Text
-            conex1.Parameters.Add(New SqlParameter("@Cve_Pro", SqlDbType.NVarChar, 2)).Value = Mid(Me.Label25.Text, 1, 2)
+            'conex1.Parameters.Add(New SqlParameter("@Cve_Pro", SqlDbType.NVarChar, 2)).Value = Mid(Me.Label25.Text, 1, 2)
+            conex1.Parameters.Add(New SqlParameter("@Cve_Pro", SqlDbType.NVarChar, 2)).Value = Me.TBCP5.Text
             conex1.Parameters.Add(New SqlParameter("@Cve_Art", SqlDbType.NVarChar, 5)).Value = Me.Label25.Text
             conex1.Parameters.Add(New SqlParameter("@Nombre_Art", SqlDbType.NVarChar, 50)).Value = Me.CBA5.Text
             conex1.Parameters.Add(New SqlParameter("@Fecha_Cap_Req", SqlDbType.SmallDateTime)).Value = DateTimePicker1.Text
@@ -954,8 +1329,9 @@ Public Class FRMREQMAT
             conex1.Parameters.Add(New SqlParameter("@Total_IVA", SqlDbType.Decimal, 9)).Value = 0
             conex1.Parameters.Add(New SqlParameter("@Status_Entrega", SqlDbType.NChar, 1)).Value = ""
             conex1.Parameters.Add(New SqlParameter("@Id_Depto", SqlDbType.Int, 2)).Value = Me.Label_Id_Depto.Text
+            conex1.Parameters.Add(New SqlParameter("@Cve_Area_Autoriza", SqlDbType.NChar, 10)).Value = Mid(Me.TBAA5.Text, 1, 1)
 
-            conex1.CommandText = insar5
+            conex1.CommandText = Insar5
             conex1.ExecuteNonQuery()
             Me.SqlConnection1.Close()
         Catch es As Exception
@@ -965,10 +1341,12 @@ Public Class FRMREQMAT
     Sub requerimiento6()
         Try
             Me.SqlConnection1.Open()
-            Dim Insar6 As String = "INSERT INTO Requerimiento (Folio,Cve_Pro,Cve_Art,Nombre_Art,Fecha_Cap_Req,Depto,Titular_Depto,Cant_Art,Justificacion,Act,Status_titular,Status_Sub_Adm,Status_Direccion,No_Factura,No_Compra,Precio_Unitario,Total_x_Cantidad,IVA,Total_IVA,Status_Entrega,Id_Depto) values(@Folio,@Cve_Pro,@Cve_Art,@Nombre_Art,@Fecha_Cap_Req,@Depto,@Titular_Depto,@Cant_Art,@Justificacion,@Act,@Status_titular,@Status_Sub_Adm,@Status_Direccion,@No_Factura,@No_Compra,@Precio_Unitario,@Total_x_Cantidad,@IVA,@Total_IVA,@Status_Entrega,@Id_Depto)"
-            Dim conex1 As New SqlClient.SqlCommand(insar6, Me.SqlConnection1)
+            'Dim Insar6 As String = "INSERT INTO Requerimiento (Folio,Cve_Pro,Cve_Art,Nombre_Art,Fecha_Cap_Req,Depto,Titular_Depto,Cant_Art,Justificacion,Act,Status_titular,Status_Sub_Adm,Status_Direccion,No_Factura,No_Compra,Precio_Unitario,Total_x_Cantidad,IVA,Total_IVA,Status_Entrega,Id_Depto) values(@Folio,@Cve_Pro,@Cve_Art,@Nombre_Art,@Fecha_Cap_Req,@Depto,@Titular_Depto,@Cant_Art,@Justificacion,@Act,@Status_titular,@Status_Sub_Adm,@Status_Direccion,@No_Factura,@No_Compra,@Precio_Unitario,@Total_x_Cantidad,@IVA,@Total_IVA,@Status_Entrega,@Id_Depto)"
+            Dim Insar6 As String = "INSERT INTO Requerimiento (Folio,Cve_Pro,Cve_Art,Nombre_Art,Fecha_Cap_Req,Depto,Titular_Depto,Cant_Art,Justificacion,Act,Status_titular,Status_Sub_Adm,Status_Direccion,No_Factura,No_Compra,Precio_Unitario,Total_x_Cantidad,IVA,Total_IVA,Status_Entrega,Id_Depto,Cve_Area_Autoriza) values(@Folio,@Cve_Pro,@Cve_Art,@Nombre_Art,@Fecha_Cap_Req,@Depto,@Titular_Depto,@Cant_Art,@Justificacion,@Act,@Status_titular,@Status_Sub_Adm,@Status_Direccion,@No_Factura,@No_Compra,@Precio_Unitario,@Total_x_Cantidad,@IVA,@Total_IVA,@Status_Entrega,@Id_Depto,@Cve_Area_Autoriza)"
+            Dim conex1 As New SqlClient.SqlCommand(Insar6, Me.SqlConnection1)
             conex1.Parameters.Add(New SqlParameter("@Folio", SqlDbType.Int, 4)).Value = Me.TBFolio.Text
-            conex1.Parameters.Add(New SqlParameter("@Cve_Pro", SqlDbType.NVarChar, 2)).Value = Mid(Me.Label26.Text, 1, 2)
+            'conex1.Parameters.Add(New SqlParameter("@Cve_Pro", SqlDbType.NVarChar, 2)).Value = Mid(Me.Label26.Text, 1, 2)
+            conex1.Parameters.Add(New SqlParameter("@Cve_Pro", SqlDbType.NVarChar, 2)).Value = Me.TBCP6.Text
             conex1.Parameters.Add(New SqlParameter("@Cve_Art", SqlDbType.NVarChar, 5)).Value = Me.Label26.Text
             conex1.Parameters.Add(New SqlParameter("@Nombre_Art", SqlDbType.NVarChar, 50)).Value = Me.CBA6.Text
             conex1.Parameters.Add(New SqlParameter("@Fecha_Cap_Req", SqlDbType.SmallDateTime)).Value = DateTimePicker1.Text
@@ -989,7 +1367,8 @@ Public Class FRMREQMAT
             conex1.Parameters.Add(New SqlParameter("@Total_IVA", SqlDbType.Decimal, 9)).Value = 0
             conex1.Parameters.Add(New SqlParameter("@Status_Entrega", SqlDbType.NChar, 1)).Value = ""
             conex1.Parameters.Add(New SqlParameter("@Id_Depto", SqlDbType.Int, 2)).Value = Me.Label_Id_Depto.Text
-            conex1.CommandText = insar6
+            conex1.Parameters.Add(New SqlParameter("@Cve_Area_Autoriza", SqlDbType.NChar, 10)).Value = Mid(Me.TBAA6.Text, 1, 1)
+            conex1.CommandText = Insar6
             conex1.ExecuteNonQuery()
             Me.SqlConnection1.Close()
         Catch es As Exception
@@ -999,10 +1378,12 @@ Public Class FRMREQMAT
     Sub requerimiento7()
         Try
             Me.SqlConnection1.Open()
-            Dim Insar7 As String = "INSERT INTO Requerimiento (Folio,Cve_Pro,Cve_Art,Nombre_Art,Fecha_Cap_Req,Depto,Titular_Depto,Cant_Art,Justificacion,Act,Status_titular,Status_Sub_Adm,Status_Direccion,No_Factura,No_Compra,Precio_Unitario,Total_x_Cantidad,IVA,Total_IVA,Status_Entrega,Id_Depto) values(@Folio,@Cve_Pro,@Cve_Art,@Nombre_Art,@Fecha_Cap_Req,@Depto,@Titular_Depto,@Cant_Art,@Justificacion,@Act,@Status_titular,@Status_Sub_Adm,@Status_Direccion,@No_Factura,@No_Compra,@Precio_Unitario,@Total_x_Cantidad,@IVA,@Total_IVA,@Status_Entrega,@Id_Depto)"
-            Dim conex1 As New SqlClient.SqlCommand(insar7, Me.SqlConnection1)
+            'Dim Insar7 As String = "INSERT INTO Requerimiento (Folio,Cve_Pro,Cve_Art,Nombre_Art,Fecha_Cap_Req,Depto,Titular_Depto,Cant_Art,Justificacion,Act,Status_titular,Status_Sub_Adm,Status_Direccion,No_Factura,No_Compra,Precio_Unitario,Total_x_Cantidad,IVA,Total_IVA,Status_Entrega,Id_Depto) values(@Folio,@Cve_Pro,@Cve_Art,@Nombre_Art,@Fecha_Cap_Req,@Depto,@Titular_Depto,@Cant_Art,@Justificacion,@Act,@Status_titular,@Status_Sub_Adm,@Status_Direccion,@No_Factura,@No_Compra,@Precio_Unitario,@Total_x_Cantidad,@IVA,@Total_IVA,@Status_Entrega,@Id_Depto)"
+            Dim Insar7 As String = "INSERT INTO Requerimiento (Folio,Cve_Pro,Cve_Art,Nombre_Art,Fecha_Cap_Req,Depto,Titular_Depto,Cant_Art,Justificacion,Act,Status_titular,Status_Sub_Adm,Status_Direccion,No_Factura,No_Compra,Precio_Unitario,Total_x_Cantidad,IVA,Total_IVA,Status_Entrega,Id_Depto,Cve_Area_Autoriza) values(@Folio,@Cve_Pro,@Cve_Art,@Nombre_Art,@Fecha_Cap_Req,@Depto,@Titular_Depto,@Cant_Art,@Justificacion,@Act,@Status_titular,@Status_Sub_Adm,@Status_Direccion,@No_Factura,@No_Compra,@Precio_Unitario,@Total_x_Cantidad,@IVA,@Total_IVA,@Status_Entrega,@Id_Depto,@Cve_Area_Autoriza)"
+            Dim conex1 As New SqlClient.SqlCommand(Insar7, Me.SqlConnection1)
             conex1.Parameters.Add(New SqlParameter("@Folio", SqlDbType.Int, 4)).Value = Me.TBFolio.Text
-            conex1.Parameters.Add(New SqlParameter("@Cve_Pro", SqlDbType.NVarChar, 2)).Value = Mid(Me.Label27.Text, 1, 2)
+            'conex1.Parameters.Add(New SqlParameter("@Cve_Pro", SqlDbType.NVarChar, 2)).Value = Mid(Me.Label27.Text, 1, 2)
+            conex1.Parameters.Add(New SqlParameter("@Cve_Pro", SqlDbType.NVarChar, 2)).Value = Me.TBCP7.Text
             conex1.Parameters.Add(New SqlParameter("@Cve_Art", SqlDbType.NVarChar, 5)).Value = Me.Label27.Text
             conex1.Parameters.Add(New SqlParameter("@Nombre_Art", SqlDbType.NVarChar, 50)).Value = Me.CBA7.Text
             conex1.Parameters.Add(New SqlParameter("@Fecha_Cap_Req", SqlDbType.SmallDateTime)).Value = DateTimePicker1.Text
@@ -1023,7 +1404,8 @@ Public Class FRMREQMAT
             conex1.Parameters.Add(New SqlParameter("@Total_IVA", SqlDbType.Decimal, 9)).Value = 0
             conex1.Parameters.Add(New SqlParameter("@Status_Entrega", SqlDbType.NChar, 1)).Value = ""
             conex1.Parameters.Add(New SqlParameter("@Id_Depto", SqlDbType.Int, 2)).Value = Me.Label_Id_Depto.Text
-            conex1.CommandText = insar7
+            conex1.Parameters.Add(New SqlParameter("@Cve_Area_Autoriza", SqlDbType.NChar, 10)).Value = Mid(Me.TBAA7.Text, 1, 1)
+            conex1.CommandText = Insar7
             conex1.ExecuteNonQuery()
             Me.SqlConnection1.Close()
         Catch es As Exception
@@ -1033,10 +1415,12 @@ Public Class FRMREQMAT
     Sub requerimiento8()
         Try
             Me.SqlConnection1.Open()
-            Dim Insar8 As String = "INSERT INTO Requerimiento (Folio,Cve_Pro,Cve_Art,Nombre_Art,Fecha_Cap_Req,Depto,Titular_Depto,Cant_Art,Justificacion,Act,Status_titular,Status_Sub_Adm,Status_Direccion,No_Factura,No_Compra,Precio_Unitario,Total_x_Cantidad,IVA,Total_IVA,Status_Entrega,Id_Depto) values(@Folio,@Cve_Pro,@Cve_Art,@Nombre_Art,@Fecha_Cap_Req,@Depto,@Titular_Depto,@Cant_Art,@Justificacion,@Act,@Status_titular,@Status_Sub_Adm,@Status_Direccion,@No_Factura,@No_Compra,@Precio_Unitario,@Total_x_Cantidad,@IVA,@Total_IVA,@Status_Entrega,@Id_Depto)"
-            Dim conex1 As New SqlClient.SqlCommand(insar8, Me.SqlConnection1)
+            'Dim Insar8 As String = "INSERT INTO Requerimiento (Folio,Cve_Pro,Cve_Art,Nombre_Art,Fecha_Cap_Req,Depto,Titular_Depto,Cant_Art,Justificacion,Act,Status_titular,Status_Sub_Adm,Status_Direccion,No_Factura,No_Compra,Precio_Unitario,Total_x_Cantidad,IVA,Total_IVA,Status_Entrega,Id_Depto) values(@Folio,@Cve_Pro,@Cve_Art,@Nombre_Art,@Fecha_Cap_Req,@Depto,@Titular_Depto,@Cant_Art,@Justificacion,@Act,@Status_titular,@Status_Sub_Adm,@Status_Direccion,@No_Factura,@No_Compra,@Precio_Unitario,@Total_x_Cantidad,@IVA,@Total_IVA,@Status_Entrega,@Id_Depto)"
+            Dim Insar8 As String = "INSERT INTO Requerimiento (Folio,Cve_Pro,Cve_Art,Nombre_Art,Fecha_Cap_Req,Depto,Titular_Depto,Cant_Art,Justificacion,Act,Status_titular,Status_Sub_Adm,Status_Direccion,No_Factura,No_Compra,Precio_Unitario,Total_x_Cantidad,IVA,Total_IVA,Status_Entrega,Id_Depto,Cve_Area_Autoriza) values(@Folio,@Cve_Pro,@Cve_Art,@Nombre_Art,@Fecha_Cap_Req,@Depto,@Titular_Depto,@Cant_Art,@Justificacion,@Act,@Status_titular,@Status_Sub_Adm,@Status_Direccion,@No_Factura,@No_Compra,@Precio_Unitario,@Total_x_Cantidad,@IVA,@Total_IVA,@Status_Entrega,@Id_Depto,@Cve_Area_Autoriza)"
+            Dim conex1 As New SqlClient.SqlCommand(Insar8, Me.SqlConnection1)
             conex1.Parameters.Add(New SqlParameter("@Folio", SqlDbType.Int, 4)).Value = Me.TBFolio.Text
-            conex1.Parameters.Add(New SqlParameter("@Cve_Pro", SqlDbType.NVarChar, 2)).Value = Mid(Me.Label28.Text, 1, 2)
+            'conex1.Parameters.Add(New SqlParameter("@Cve_Pro", SqlDbType.NVarChar, 2)).Value = Mid(Me.Label28.Text, 1, 2)
+            conex1.Parameters.Add(New SqlParameter("@Cve_Pro", SqlDbType.NVarChar, 2)).Value = Me.TBCP8.Text
             conex1.Parameters.Add(New SqlParameter("@Cve_Art", SqlDbType.NVarChar, 5)).Value = Me.Label28.Text
             conex1.Parameters.Add(New SqlParameter("@Nombre_Art", SqlDbType.NVarChar, 50)).Value = Me.CBA8.Text
             conex1.Parameters.Add(New SqlParameter("@Fecha_Cap_Req", SqlDbType.SmallDateTime)).Value = DateTimePicker1.Text
@@ -1057,7 +1441,8 @@ Public Class FRMREQMAT
             conex1.Parameters.Add(New SqlParameter("@Total_IVA", SqlDbType.Decimal, 9)).Value = 0
             conex1.Parameters.Add(New SqlParameter("@Status_Entrega", SqlDbType.NChar, 1)).Value = ""
             conex1.Parameters.Add(New SqlParameter("@Id_Depto", SqlDbType.Int, 2)).Value = Me.Label_Id_Depto.Text
-            conex1.CommandText = insar8
+            conex1.Parameters.Add(New SqlParameter("@Cve_Area_Autoriza", SqlDbType.NChar, 10)).Value = Mid(Me.TBAA8.Text, 1, 1)
+            conex1.CommandText = Insar8
             conex1.ExecuteNonQuery()
             Me.SqlConnection1.Close()
         Catch es As Exception
@@ -1067,10 +1452,12 @@ Public Class FRMREQMAT
     Sub requerimiento9()
         Try
             Me.SqlConnection1.Open()
-            Dim Insar9 As String = "INSERT INTO Requerimiento (Folio,Cve_Pro,Cve_Art,Nombre_Art,Fecha_Cap_Req,Depto,Titular_Depto,Cant_Art,Justificacion,Act,Status_titular,Status_Sub_Adm,Status_Direccion,No_Factura,No_Compra,Precio_Unitario,Total_x_Cantidad,IVA,Total_IVA,Status_Entrega,Id_Depto) values(@Folio,@Cve_Pro,@Cve_Art,@Nombre_Art,@Fecha_Cap_Req,@Depto,@Titular_Depto,@Cant_Art,@Justificacion,@Act,@Status_titular,@Status_Sub_Adm,@Status_Direccion,@No_Factura,@No_Compra,@Precio_Unitario,@Total_x_Cantidad,@IVA,@Total_IVA,@Status_Entrega,@Id_Depto)"
-            Dim conex1 As New SqlClient.SqlCommand(insar9, Me.SqlConnection1)
+            'Dim Insar9 As String = "INSERT INTO Requerimiento (Folio,Cve_Pro,Cve_Art,Nombre_Art,Fecha_Cap_Req,Depto,Titular_Depto,Cant_Art,Justificacion,Act,Status_titular,Status_Sub_Adm,Status_Direccion,No_Factura,No_Compra,Precio_Unitario,Total_x_Cantidad,IVA,Total_IVA,Status_Entrega,Id_Depto) values(@Folio,@Cve_Pro,@Cve_Art,@Nombre_Art,@Fecha_Cap_Req,@Depto,@Titular_Depto,@Cant_Art,@Justificacion,@Act,@Status_titular,@Status_Sub_Adm,@Status_Direccion,@No_Factura,@No_Compra,@Precio_Unitario,@Total_x_Cantidad,@IVA,@Total_IVA,@Status_Entrega,@Id_Depto)"
+            Dim Insar9 As String = "INSERT INTO Requerimiento (Folio,Cve_Pro,Cve_Art,Nombre_Art,Fecha_Cap_Req,Depto,Titular_Depto,Cant_Art,Justificacion,Act,Status_titular,Status_Sub_Adm,Status_Direccion,No_Factura,No_Compra,Precio_Unitario,Total_x_Cantidad,IVA,Total_IVA,Status_Entrega,Id_Depto,Cve_Area_Autoriza) values(@Folio,@Cve_Pro,@Cve_Art,@Nombre_Art,@Fecha_Cap_Req,@Depto,@Titular_Depto,@Cant_Art,@Justificacion,@Act,@Status_titular,@Status_Sub_Adm,@Status_Direccion,@No_Factura,@No_Compra,@Precio_Unitario,@Total_x_Cantidad,@IVA,@Total_IVA,@Status_Entrega,@Id_Depto,@Cve_Area_Autoriza)"
+            Dim conex1 As New SqlClient.SqlCommand(Insar9, Me.SqlConnection1)
             conex1.Parameters.Add(New SqlParameter("@Folio", SqlDbType.Int, 4)).Value = Me.TBFolio.Text
-            conex1.Parameters.Add(New SqlParameter("@Cve_Pro", SqlDbType.NVarChar, 2)).Value = Mid(Me.Label29.Text, 1, 2)
+            'conex1.Parameters.Add(New SqlParameter("@Cve_Pro", SqlDbType.NVarChar, 2)).Value = Mid(Me.Label29.Text, 1, 2)
+            conex1.Parameters.Add(New SqlParameter("@Cve_Pro", SqlDbType.NVarChar, 2)).Value = Me.TBCP9.Text
             conex1.Parameters.Add(New SqlParameter("@Cve_Art", SqlDbType.NVarChar, 5)).Value = Me.Label29.Text
             conex1.Parameters.Add(New SqlParameter("@Nombre_Art", SqlDbType.NVarChar, 50)).Value = Me.CBA9.Text
             conex1.Parameters.Add(New SqlParameter("@Fecha_Cap_Req", SqlDbType.SmallDateTime)).Value = DateTimePicker1.Text
@@ -1091,7 +1478,8 @@ Public Class FRMREQMAT
             conex1.Parameters.Add(New SqlParameter("@Total_IVA", SqlDbType.Decimal, 9)).Value = 0
             conex1.Parameters.Add(New SqlParameter("@Status_Entrega", SqlDbType.NChar, 1)).Value = ""
             conex1.Parameters.Add(New SqlParameter("@Id_Depto", SqlDbType.Int, 2)).Value = Me.Label_Id_Depto.Text
-            conex1.CommandText = insar9
+            conex1.Parameters.Add(New SqlParameter("@Cve_Area_Autoriza", SqlDbType.NChar, 10)).Value = Mid(Me.TBAA9.Text, 1, 1)
+            conex1.CommandText = Insar9
             conex1.ExecuteNonQuery()
             Me.SqlConnection1.Close()
         Catch es As Exception
@@ -1101,10 +1489,12 @@ Public Class FRMREQMAT
     Sub requerimiento10()
         Try
             Me.SqlConnection1.Open()
-            Dim Insar10 As String = "INSERT INTO Requerimiento (Folio,Cve_Pro,Cve_Art,Nombre_Art,Fecha_Cap_Req,Depto,Titular_Depto,Cant_Art,Justificacion,Act,Status_titular,Status_Sub_Adm,Status_Direccion,No_Factura,No_Compra,Precio_Unitario,Total_x_Cantidad,IVA,Total_IVA,Status_Entrega,Id_Depto) values(@Folio,@Cve_Pro,@Cve_Art,@Nombre_Art,@Fecha_Cap_Req,@Depto,@Titular_Depto,@Cant_Art,@Justificacion,@Act,@Status_titular,@Status_Sub_Adm,@Status_Direccion,@No_Factura,@No_Compra,@Precio_Unitario,@Total_x_Cantidad,@IVA,@Total_IVA,@Status_Entrega,@Id_Depto)"
-            Dim conex1 As New SqlClient.SqlCommand(insar10, Me.SqlConnection1)
+            'Dim Insar10 As String = "INSERT INTO Requerimiento (Folio,Cve_Pro,Cve_Art,Nombre_Art,Fecha_Cap_Req,Depto,Titular_Depto,Cant_Art,Justificacion,Act,Status_titular,Status_Sub_Adm,Status_Direccion,No_Factura,No_Compra,Precio_Unitario,Total_x_Cantidad,IVA,Total_IVA,Status_Entrega,Id_Depto) values(@Folio,@Cve_Pro,@Cve_Art,@Nombre_Art,@Fecha_Cap_Req,@Depto,@Titular_Depto,@Cant_Art,@Justificacion,@Act,@Status_titular,@Status_Sub_Adm,@Status_Direccion,@No_Factura,@No_Compra,@Precio_Unitario,@Total_x_Cantidad,@IVA,@Total_IVA,@Status_Entrega,@Id_Depto)"
+            Dim Insar10 As String = "INSERT INTO Requerimiento (Folio,Cve_Pro,Cve_Art,Nombre_Art,Fecha_Cap_Req,Depto,Titular_Depto,Cant_Art,Justificacion,Act,Status_titular,Status_Sub_Adm,Status_Direccion,No_Factura,No_Compra,Precio_Unitario,Total_x_Cantidad,IVA,Total_IVA,Status_Entrega,Id_Depto,Cve_Area_Autoriza) values(@Folio,@Cve_Pro,@Cve_Art,@Nombre_Art,@Fecha_Cap_Req,@Depto,@Titular_Depto,@Cant_Art,@Justificacion,@Act,@Status_titular,@Status_Sub_Adm,@Status_Direccion,@No_Factura,@No_Compra,@Precio_Unitario,@Total_x_Cantidad,@IVA,@Total_IVA,@Status_Entrega,@Id_Depto,@Cve_Area_Autoriza)"
+            Dim conex1 As New SqlClient.SqlCommand(Insar10, Me.SqlConnection1)
             conex1.Parameters.Add(New SqlParameter("@Folio", SqlDbType.Int, 4)).Value = Me.TBFolio.Text
-            conex1.Parameters.Add(New SqlParameter("@Cve_Pro", SqlDbType.NVarChar, 2)).Value = Mid(Me.Label30.Text, 1, 2)
+            'conex1.Parameters.Add(New SqlParameter("@Cve_Pro", SqlDbType.NVarChar, 2)).Value = Mid(Me.Label30.Text, 1, 2)
+            conex1.Parameters.Add(New SqlParameter("@Cve_Pro", SqlDbType.NVarChar, 2)).Value = Me.TBCP10.Text
             conex1.Parameters.Add(New SqlParameter("@Cve_Art", SqlDbType.NVarChar, 5)).Value = Me.Label30.Text
             conex1.Parameters.Add(New SqlParameter("@Nombre_Art", SqlDbType.NVarChar, 50)).Value = Me.CBA10.Text
             conex1.Parameters.Add(New SqlParameter("@Fecha_Cap_Req", SqlDbType.SmallDateTime)).Value = DateTimePicker1.Text
@@ -1125,6 +1515,7 @@ Public Class FRMREQMAT
             conex1.Parameters.Add(New SqlParameter("@Total_IVA", SqlDbType.Decimal, 9)).Value = 0
             conex1.Parameters.Add(New SqlParameter("@Status_Entrega", SqlDbType.NChar, 1)).Value = ""
             conex1.Parameters.Add(New SqlParameter("@Id_Depto", SqlDbType.Int, 2)).Value = Me.Label_Id_Depto.Text
+            conex1.Parameters.Add(New SqlParameter("@Cve_Area_Autoriza", SqlDbType.NChar, 10)).Value = Mid(Me.TBAA10.Text, 1, 1)
             conex1.CommandText = insar10
             conex1.ExecuteNonQuery()
             Me.SqlConnection1.Close()
@@ -1171,11 +1562,11 @@ Public Class FRMREQMAT
         Else
             'MsgBox("No existen elementos con STATUS seleccionado..!", , "Guardar")
             Me.SqlConnection1.Close()
-            Me.CBProducto.Focus()
+            'Me.CBProducto.Focus()
         End If
         Call limpiar_formulario()
         Call buscar_ultimo_folio()
-        CBProducto.Focus()
+        'CBProducto.Focus()
     End Sub
     Private Sub BtnRegresar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnRegresar.Click
         Me.Close()
@@ -1186,5 +1577,6 @@ Public Class FRMREQMAT
         'Me.TBDepto.Text = FrmJefes.TBDepto.Text
         'Me.TBTitular.Text = LoginFormJefes.Password.Text
     End Sub
+
 
 End Class
